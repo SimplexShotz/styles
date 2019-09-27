@@ -17,6 +17,11 @@ a {
   text-decoration: none;
   font-weight: 300;
 }
+a:hover {
+  color: rgb(25, 175, 225);
+  text-decoration: none;
+  font-weight: 300;
+}
 hr {
   float: left;
   border: none;
