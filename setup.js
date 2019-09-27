@@ -1,5 +1,2 @@
-alert(window.location.search);
-var ss = document.createElement("link");
-ss.rel = "stylesheet";
-ss.href = "https://simplexshotz.github.io/styles/basic.css";
-document.head.appendChild(s);
+// alert(window.location.search);
+document.head.innerHTML += "<link rel='stylesheet' href='https://simplexshotz.github.io/styles/basic.css'>";
