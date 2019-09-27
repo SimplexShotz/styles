@@ -1,5 +1,11 @@
 window.onload = function() {
-  // alert(window.location.search);
+  var q = document.getElementsByTagName("script");
+  q = q[q.length - 1].src;
+  q = q.split("?");
+  q.shift();
+  q = q.join("?").split("");
+  q.shift();
+  alert(q.join(""));
   document.head.innerHTML += "<link rel='stylesheet' href='https://simplexshotz.github.io/styles/basic.css'>";
   document.head.innerHTML += "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,500,700,900&display=swap'>";
   document.head.innerHTML += "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap'>";
