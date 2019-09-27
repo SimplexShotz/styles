@@ -1,8 +1,11 @@
 window.onload = function() {
   var q = document.getElementsByTagName("script");
   q = q[q.length - 1].src;
+  alert(q);
   q = q.split("?");
+  alert(q);
   q.shift();
+  alert(q);
   q = q.join("?");
   alert(q);
   document.head.innerHTML += "<link rel='stylesheet' href='https://simplexshotz.github.io/styles/basic.css'>";
