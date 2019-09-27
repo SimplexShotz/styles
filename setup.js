@@ -1,9 +1,13 @@
 window.onload = function() {
-  alert(getQueries().head);
-  document.head.innerHTML += "<link rel='stylesheet' href='https://simplexshotz.github.io/styles/basic.css'>";
+  var q = getQueries();
   document.head.innerHTML += "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,500,700,900&display=swap'>";
   document.head.innerHTML += "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap'>";
-  document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo'><div class='logo-tag'>&lt/></div><div class='logo-text'>Brandon</div></div><div id='header-right'>" + document.title + "</div></div></div><div id='content'>" + document.body.innerHTML + "</div>";
+  switch (q.type) {
+    default:
+      document.head.innerHTML += "<link rel='stylesheet' href='https://simplexshotz.github.io/styles/basic.css'>";
+      document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo'><div class='logo-tag'>&lt/></div><div class='logo-text'>" + (q.name ? q.name : "Brandon") + "</div></div><div id='header-right'>" + (q.head ? q.head : document.title) + "</div></div></div><div id='content'>" + document.body.innerHTML + "</div>";
+    break;
+  }
 };
 
 function getQueries() {
