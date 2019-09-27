@@ -62,3 +62,18 @@ br {
   font-weight: 700;
   display: inline;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+table, th, td {
+  border: 1px solid rgb(200, 200, 200);
+}
+th {
+  font-weight: 500;
+}
+th, td {
+  padding: 10px;
+  overflow: hidden;
+}
