@@ -1,4 +1,7 @@
 window.onload = function() {
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    alert("Your device is a mobile device. This site has not been updated to support mobile devices, and so it may not display properly.");
+  }
   var q = getQueries();
   document.head.innerHTML += "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,500,700,900&display=swap'>";
   document.head.innerHTML += "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap'>";
