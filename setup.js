@@ -1,7 +1,6 @@
 window.onload = function() {
   var m = false;
   if (/Mobi|Android/i.test(navigator.userAgent)) {
-    document.body.innerHTML = "<div style='background-color: rgb(250, 250, 250); color: rgb(50, 50, 50); padding: 25px; font-weight: 900;'>This is a mobile device. This page may not display properly.</div>" + document.body.innerHTML;
     alert("Your device is a mobile device. This site has not been updated to support mobile devices yet, so it may not display properly.");
     m = true;
   }
@@ -35,6 +34,7 @@ window.onload = function() {
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo'><div class='logo-tag'>&lt/></div><div class='logo-text'>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + "</div></div><div id='header-right'>" + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
+    document.body.innerHTML = "<div style='background-color: rgb(250, 250, 250); color: rgb(50, 50, 50); padding: 25px; font-weight: 900;'><span style='color: rgb(200, 50, 50); display: inline;'>Notice:</span> This is a mobile device. This page may not display properly.</div>" + document.body.innerHTML;
   }
 };
 
