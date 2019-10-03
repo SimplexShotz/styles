@@ -1,7 +1,7 @@
 window.onload = function() {
   var m = false;
   if (/Mobi|Android/i.test(navigator.userAgent)) {
-    alert("Your device is a mobile device. This site has not been updated to support mobile devices yet, so it may not display properly.");
+    alert("[V1a] Your device is a mobile device. This site has not been updated to support mobile devices yet, so it may not display properly.");
     m = true;
   }
   var q = getQueries();
