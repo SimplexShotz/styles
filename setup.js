@@ -34,7 +34,7 @@ window.onload = function() {
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo-tag'>&lt/></div>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + " - " + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
-    document.body.innerHTML = "<div style='background-color: rgb(250, 250, 250); color: rgb(50, 50, 50); padding: 25px; font-weight: 500;'><span style='color: rgb(200, 50, 50); display: inline; font-weight: 900;'>Notice:</span> This is a mobile device. This page may not display properly.</div>" + document.body.innerHTML;
+    document.body.innerHTML = "<div id='mobile-alert-1' class='alert-container'><div class='alert-notice'>Notice:</div> This is a mobile device. This page may not display properly.<div class='alert-x' onclick='hide(\"mobile-alert-1\")'></div>✕</div>" + document.body.innerHTML;
   }
 };
 
@@ -49,4 +49,8 @@ function getQueries() {
     temp[q[i].split("=")[0]] = q[i].split("=")[1];
   }
   return temp;
+}
+
+function hide(id) {
+  document.getElementById(id).style.display = "none";
 }
