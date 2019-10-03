@@ -34,7 +34,7 @@ window.onload = function() {
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo-tag'>&lt/></div>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + " - " + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
-    document.body.innerHTML = "<div id='mobile-alert-1' class='alert-container'><div class='alert-notice'>Notice:</div> This is a mobile device. This page may not display properly.<div class='alert-x' onclick='hide(\"mobile-alert-1\")'></div>✕</div>" + document.body.innerHTML;
+    document.body.innerHTML = "<div id='mobile-alert-1' class='alert-container'><div class='alert-notice'>Notice:</div> This is a mobile device. This page may not display properly.<div class='alert-x' onclick='hide(\"mobile-alert-1\")'>✕</div></div>" + document.body.innerHTML;
   }
 };
 
