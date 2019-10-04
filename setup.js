@@ -1,5 +1,5 @@
+var m = false;
 window.onload = function() {
-  var m = false;
   if (/Mobi|Android/i.test(navigator.userAgent)) {
     alert("[V1a] Your device is a mobile device. This site has not been updated to support mobile devices yet, so it may not display properly.");
     m = true;
@@ -34,7 +34,7 @@ window.onload = function() {
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo-tag'>&lt/></div>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + " - " + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
-    document.body.innerHTML = "<div id='mobile-alert-1' class='alert-container'><div class='alert-notice'>Notice:</div> This is a mobile device. This page may not display properly.<div class='alert-x' onclick='hide(\"mobile-alert-1\")'>✕</div></div>" + document.body.innerHTML;
+    alert("This is a mobile device. This page may not display properly.");
   }
 };
 
@@ -51,6 +51,15 @@ function getQueries() {
   return temp;
 }
 
+var alerts = [];
+function alert(txt) {
+  if (m) {
+    document.body.innerHTML = "<div id='mobile-alert-" + alerts.length + "' class='alert-container'><div class='alert-notice'>Notice:</div> " + txt + "<div class='alert-x' onclick='hide(\"mobile-alert-" + alerts.length + "\")'>✕</div></div>" + document.body.innerHTML;
+  } else {
+    document.body.innerHTML = "<div id='alert-" + alerts.length + "' class='alert-container'><div class='alert-notice'>Notice:</div> " + txt + "<div class='alert-x' onclick='hide(\"alert-" + alerts.length + "\")'>✕</div></div>" + document.body.innerHTML;
+  }
+  alerts.push(txt);
+}
 function hide(id) {
   document.getElementById(id).style.display = "none";
 }
