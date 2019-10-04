@@ -91,6 +91,6 @@ th, td {
   background-color: rgba(0, 0, 0, 0.5);
   color: rgb(255, 255, 255);
   text-align: center;
-  line-height: 24pt;
   padding-top: 2px;
+  line-height: calc(24pt - 2px);
 }
