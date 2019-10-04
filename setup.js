@@ -34,7 +34,7 @@ window.onload = function() {
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo-tag'>&lt/></div>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + " - " + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
-    alert("This is a mobile device. This page may not display properly.");
+    ialert("This is a mobile device. This page may not display properly.");
   }
 };
 
@@ -52,7 +52,7 @@ function getQueries() {
 }
 
 var alerts = [];
-function alert(txt) {
+function ialert(txt) {
   if (m) {
     document.body.innerHTML = "<div id='mobile-alert-" + alerts.length + "' class='alert-container'><div class='alert-notice'>Notice:</div> " + txt + "<div class='alert-x' onclick='hide(\"mobile-alert-" + alerts.length + "\")'>✕</div></div>" + document.body.innerHTML;
   } else {
