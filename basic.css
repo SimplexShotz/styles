@@ -34,7 +34,7 @@ br {
 }
 #header {
   background-color: rgb(50, 50, 50);
-  width: calc(60% - 50px);
+  width: calc(60%);
   padding: 25px 20% 25px 20%;
   color: rgb(255, 255, 255);
 }
@@ -43,7 +43,7 @@ br {
   margin: 0px;
   border-left: 1px solid rgba(200, 200, 200, 0.5);
   border-right: 1px solid rgba(200, 200, 200, 0.5);
-  width: 100%;
+  width: calc(100% - 50px);
 }
 #header-right {
   float: right;
