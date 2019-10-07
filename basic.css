@@ -34,7 +34,7 @@ br {
 }
 #header {
   background-color: rgb(50, 50, 50);
-  width: 60%;
+  width: 100%;
   padding: 25px 20% 25px 20%;
   color: rgb(255, 255, 255);
 }
