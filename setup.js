@@ -36,6 +36,8 @@ window.onload = function() {
     }
     ialert("This is a mobile device. This page may not display properly.");
   }
+  ialert("This is a test alert. You can ignore it.");
+  document.body.style.display = "block";
 };
 
 function getQueries() {
