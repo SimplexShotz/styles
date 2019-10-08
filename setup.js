@@ -13,31 +13,38 @@ window.onload = function() {
   if (!m) { // Default styles:
     switch (q.type) {
       case "basic":
-        document.head.innerHTML += "<link rel='stylesheet' href='https://styles.simplexshotz.tk/basic.css'>";
+        onCSSLoad("https://styles.simplexshotz.tk/basic.css", function() {
+          document.body.style.display = "block";
+        });
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo'><div class='logo-tag'>&lt/></div><div class='logo-text'>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + "</div></div><div id='header-right'>" + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
       default:
         alert("This style type is either not supported at all or not supported on desktop devices. Please contact the site creator to notify them of this error.");
-        document.head.innerHTML += "<link rel='stylesheet' href='https://styles.simplexshotz.tk/basic.css'>";
+        onCSSLoad("https://styles.simplexshotz.tk/basic.css", function() {
+          document.body.style.display = "block";
+        });
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo'><div class='logo-tag'>&lt/></div><div class='logo-text'>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + "</div></div><div id='header-right'>" + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
   } else { // Mobile styles:
     switch (q.type) {
       case "basic":
-        document.head.innerHTML += "<link rel='stylesheet' href='https://styles.simplexshotz.tk/basic-mobile.css'>";
+        onCSSLoad("https://styles.simplexshotz.tk/basic-mobile.css", function() {
+          document.body.style.display = "block";
+        });
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo-tag'>&lt/></div>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + " - " + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
       default:
         alert("This style type is either not supported at all or not supported on mobile devices. Please contact the site creator to notify them of this error.");
-        document.head.innerHTML += "<link rel='stylesheet' href='https://styles.simplexshotz.tk/basic-mobile.css'>";
+        onCSSLoad("https://styles.simplexshotz.tk/basic-mobile.css", function() {
+          document.body.style.display = "block";
+        });
         document.body.innerHTML = "<div id='header'><div id='header-inner'><div class='logo-tag'>&lt/></div>" + (q.name ? q.name.split("_").join(" ") : "Brandon") + " - " + (q.head ? q.head.split("_").join(" ") : document.title) + "</div></div><div id='content'>" + document.body.innerHTML + "</div>";
       break;
     }
     ialert("This is a mobile device. This page may not display properly.");
   }
   //ialert("This is a test alert. You can ignore it.");
-  document.body.style.display = "block";
 };
 
 function getQueries() {
@@ -64,4 +71,25 @@ function ialert(txt) {
 }
 function hide(id) {
   document.getElementById(id).style.display = "none";
+}
+
+function onCSSLoad(path, callback) {
+  //https://www.viget.com/articles/js-201-run-a-function-when-a-stylesheet-finishes-loading/
+  var head = document.getElementsByTagName("head")[0],
+    body = document.body,
+    css = document.createElement("link"),
+    img = document.createElement("img"),
+    cssUrl = path;
+
+  css.href = cssUrl;
+  css.rel = "stylesheet";
+  head.appendChild(css);
+
+  img.onerror = function() {
+    callback();
+    body.removeChild(img);
+  }
+
+  body.appendChild(img);
+  img.src = cssUrl;
 }
