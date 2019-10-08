@@ -75,23 +75,19 @@ function hide(id) {
 
 function onCSSLoad(path, callback) {
   //https://www.viget.com/articles/js-201-run-a-function-when-a-stylesheet-finishes-loading/
-  var head = document.getElementsByTagName("head")[0],
-    body = document.body,
-    css = document.createElement("link"),
-    img = document.createElement("img"),
-    cssUrl = path;
+  var css = document.createElement("link"),
+    img = document.createElement("img");
 
-  css.href = cssUrl;
+  css.href = path;
   css.rel = "stylesheet";
-  head.appendChild(css);
+  document.getElementsByTagName("head")[0].appendChild(css);
 
   img.onerror = function() {
-    setTimeout(function() {
-      callback();
-    }, 1);
-    body.removeChild(img);
+    callback();
+    document.body.getElementById("_hidden-css-image-id").outerHTML = "";
   }
 
-  body.appendChild(img);
-  img.src = cssUrl;
+  document.body.appendChild(img);
+  img.src = path;
+  img.id = "_hidden-css-image-id";
 }
