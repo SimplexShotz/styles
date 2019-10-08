@@ -84,7 +84,7 @@ function onCSSLoad(path, callback) {
 
   img.onerror = function() {
     callback();
-    document.body.getElementById("_hidden-css-image-id").outerHTML = "";
+    document.getElementById("_hidden-css-image-id").outerHTML = "";
   }
 
   document.body.appendChild(img);
