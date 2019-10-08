@@ -86,7 +86,9 @@ function onCSSLoad(path, callback) {
   head.appendChild(css);
 
   img.onerror = function() {
-    callback();
+    setTimeout(function() {
+      callback();
+    }, 1);
     body.removeChild(img);
   }
 
